@@ -710,6 +710,13 @@ footer::after {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .contact-form, .contact-info {
+    padding: 1.2rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -749,6 +756,22 @@ footer::after {
   .footer-contact-card {
     padding: 1rem 0.5rem;
     margin: 1rem auto 0 auto;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .contact-form, .contact-info {
+    padding: 0.8rem;
+  }
+  .contact-form button.btn.primary {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem 0;
+  }
+  .form-group input, .form-group textarea {
+    font-size: 1rem;
+    padding: 0.7rem;
   }
 }
 
@@ -800,6 +823,16 @@ footer::after {
   
   .project-tech {
     justify-content: center;
+  }
+}
+
+@media (min-width: 901px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .contact-form, .contact-info {
+    padding: 2rem;
   }
 }
 

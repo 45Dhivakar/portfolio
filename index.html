@@ -265,5 +265,17 @@
       <p>&copy; 2024 B Dhivakar. All rights reserved.</p>
     </div>
   </footer>
+  <script>
+    document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = this.querySelector('input[placeholder="Name"]').value;
+      var email = this.querySelector('input[placeholder="Email"]').value;
+      var message = this.querySelector('textarea[placeholder="Message"]').value;
+      var whatsappNumber = '7010332109';
+      var text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+      var url = `https://wa.me/${whatsappNumber}?text=${text}`;
+      window.open(url, '_blank');
+    });
+  </script>
 </body>
 </html> 
