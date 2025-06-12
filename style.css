@@ -24,6 +24,9 @@ body {
   color: var(--text-color);
   background: var(--background);
   position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Navigation */
@@ -32,20 +35,67 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
   z-index: 1000;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 0;
 }
 
 .nav-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+}
+
+/* Add scroll effect to navbar */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 0.3rem 0;
+}
+
+.logo {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-right: auto;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin-left: auto;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+  background: rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Add JavaScript for scroll effect */
+body {
+  padding-top: 60px; /* Add padding to prevent content from going under navbar */
 }
 
 .logo {
@@ -127,10 +177,10 @@ body {
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  padding: 6rem 2rem 2rem;
+  padding: 2rem 2rem 1rem;
   background: linear-gradient(to bottom right, #f0f9ff, #e0f2fe);
   position: relative;
   overflow: hidden;
@@ -139,10 +189,10 @@ body {
 .hero::before {
   content: '';
   position: absolute;
-  top: -120px;
-  left: -120px;
-  width: 350px;
-  height: 350px;
+  top: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
   background: radial-gradient(circle, #e5eaf6 60%, transparent 100%);
   z-index: 0;
   pointer-events: none;
@@ -151,10 +201,10 @@ body {
 .hero::after {
   content: '';
   position: absolute;
-  bottom: -100px;
-  right: -100px;
-  width: 250px;
-  height: 250px;
+  bottom: -120px;
+  right: -120px;
+  width: 300px;
+  height: 300px;
   background: radial-gradient(circle, #f0f4fa 60%, transparent 100%);
   z-index: 0;
   pointer-events: none;
@@ -166,20 +216,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 4rem;
   text-align: left;
   position: relative;
   z-index: 1;
+  padding: 0 1rem;
 }
 
 .hero-text {
   flex: 1;
+  max-width: 600px;
+  padding-right: 2rem;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3.7rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: var(--text-color);
   background: none;
   -webkit-background-clip: initial;
@@ -193,9 +246,8 @@ body {
 }
 
 .hero p {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
+  font-size: 1.3rem;
+  margin: 0 0 2.5rem;
   color: var(--light-text);
 }
 
@@ -391,13 +443,15 @@ section h2::after {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  padding: 2rem 0;
+  margin: 0 -1rem;
 }
 
 .skill-category {
+  padding: 1.5rem;
   background: white;
-  padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -445,6 +499,7 @@ section h2::after {
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 0 -1rem;
 }
 
 .form-group {
@@ -499,6 +554,8 @@ footer {
   border-top: 1px solid #e5e7eb;
   position: relative;
   overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 footer::before {
@@ -591,8 +648,9 @@ footer::after {
 
 /* Profile Image Hover Outline */
 .profile-image {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   margin: 0;
   border-radius: 2rem;
   overflow: hidden;
@@ -687,35 +745,146 @@ footer::after {
 
 /* Responsive Design */
 @media (max-width: 900px) {
+  .hero {
+    min-height: 70vh;
+    padding: 1.5rem 2rem 1rem;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 0;
+  }
+  
+  .profile-image {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+  }
+  
+  .hero-text {
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin: 0 0 1.5rem;
+  }
+  
+  .cta-buttons {
+    gap: 1rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .contact-form, .contact-info {
+    padding: 1rem;
+  }
+  
+  .timeline {
+    padding: 0 1rem;
+  }
+  
+  .timeline-item {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-content {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .hero-content {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
+    padding: 3rem 1rem 1rem;
   }
-  .profile-image {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto;
+
+  .hero h1 {
+    font-size: 2.2rem;
   }
-  .hero-text {
-    text-align: center;
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 100%;
+    margin: 0 auto 1.5rem;
   }
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
+
+  .about, .experience, .projects, .skills, .contact {
+    padding: 3rem 1rem 1rem;
   }
+
+  .about .section-content {
+    padding: 0 1rem;
+  }
+
   .projects-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  .contact-grid {
+
+  .skills-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
-  .contact-form, .contact-info {
-    padding: 1.2rem;
+
+  .contact-form {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .timeline {
+    padding: 0 1rem;
+  }
+
+  .timeline-item {
+    padding: 1rem;
   }
 }
 
